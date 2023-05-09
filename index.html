@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/6cf6f4947a.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <link rel="icon" href="https://uploads-ssl.webflow.com/5aa49e02dc199e00013fce52/5aba639fd4eb880a488c8141_FDI%20Icon%20Set-02-p-1600.png">
+    <link rel="icon"
+        href="https://uploads-ssl.webflow.com/5aa49e02dc199e00013fce52/5aba639fd4eb880a488c8141_FDI%20Icon%20Set-02-p-1600.png">
     <title>Escuela Dominical</title>
 </head>
 
@@ -20,6 +22,31 @@
         <div class="btn-list" id="btnList">
         </div>
     </main>
+    <footer>
+        <div class="footer-container">
+            <div class="contact-info">
+                <h3>Contacto</h3>
+                <p>
+                    <a href="mailto:edkeslerthc@gmail.com">
+                        <i class="fas fa-envelope fa-xl"></i>&nbsp;edkeslerthc@gmail.com
+                    </a>
+                </p>
+                <p>
+                    <a href="https://wa.me/50686360027" target="_blank"><i class="fab fa-whatsapp fa-xl"></i>&nbsp;+506 8636-0027</a>
+                </p>
+            </div>
+            <div class="feedback-form">
+                <h3>Enviar Comentarios</h3>
+                <form action="mailto:edkeslerthc@gmail.com" method="post" enctype="text/plain">
+                    <label for="name">Nombre:</label>
+                    <input class="feedback-input" type="text" id="name" name="name" required>
+                    <label for="feedback">Comentarios:</label>
+                    <textarea class="feedback-textarea" id="feedback" name="feedback" rows="4" required></textarea>
+                    <button class="feedback-btn" type="submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </footer>
     <script src="./js/main.js"></script>
 </body>
 
