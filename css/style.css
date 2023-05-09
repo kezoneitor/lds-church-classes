@@ -2,18 +2,30 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
+    background-image: url('../source/img/san_jose_costa_rica_temple_lds.jpeg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+header {
+    background-color: #007DA5;
 }
 
 header > h1 {
-    padding:  0 2rem 0 2rem;
     text-align: center;
+    margin: 0;
+    padding: 0.5rem;
+    color: #fff;
 }
 
 .btn-list {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    background-color: rgba(255,255,255, 0.5);
+    margin: 0.5rem 1rem;
 }
 
 .btn {
@@ -26,7 +38,13 @@ header > h1 {
     cursor: pointer;
     text-align: center;
     transition: background-color 0.3s;
-    margin-bottom: 2.5rem;
+    margin: 1rem 0;
+}
+
+.disabled {
+    background-color: #ccc;
+    color: #888;
+    cursor: not-allowed;
 }
 
 .btn:hover {
