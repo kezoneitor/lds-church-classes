@@ -1,10 +1,12 @@
 const escuelaDominicalUrl = "https://docs.google.com/spreadsheets/d/18xu5gGVZR3xL5qxss1b1dhz7CDwN6T-bnqr6GTyax3c/export?format=csv"; // Reemplaza 'ID_DEL_DOCUMENTO' con el ID real de tu archivo de Google Sheets
+const edEmail = "edkeslerthc@gmail.com";
 const Enum = {
     Text: 0,
     Key: 1,
     URL: 2,
     Disabled: 3,
-    Hidden: 4
+    Hidden: 4,
+    BtnClass: 5
 }
 
 function GetUrl(code) {
@@ -44,7 +46,24 @@ function GetUrl(code) {
         });
 }
 
+function submitFeedback() {
+    const name = $("#name").val();
+    const feedback = $("#feedback").val();
+
+    if (!name || !feedback) {
+        alert("Por favor, completa todos los campos.");
+        return;
+    }
+
+    const subject = encodeURIComponent(`Comentarios de ${name}`);
+    const body = encodeURIComponent(feedback);
+    const mailtoLink = `mailto:${edEmail}?subject=${subject}&body=${body}`;
+
+    window.location.href = mailtoLink;
+}
+
 $(document).ready(function () {
+    // Fetch para obtener la cantidad de botones
     fetch(escuelaDominicalUrl)
         .then(response => {
             if (!response.ok) {
@@ -73,7 +92,7 @@ $(document).ready(function () {
                 boton.prop('hidden', isHidden)
 
                 //Agregar clases
-                boton.addClass(`btn ${isEnabled ? '' : 'disabled'}`);
+                boton.addClass(`btn ${isEnabled ? values[Enum.BtnClass] : 'disabled'}`);
 
                 // Añadir un evento click al botón
                 boton.on('click', function () {
@@ -87,4 +106,10 @@ $(document).ready(function () {
         .catch(error => {
             console.error("Error al hacer fetch:", error);
         });
+
+    // Metodo para enviar el feedback por correo
+    $("#feedback-form").on("submit", function (event) {
+        event.preventDefault();
+        submitFeedback();
+    });
 });

@@ -42,7 +42,6 @@ header > h1 {
 .btn {
     width: 90%;
     font-size: 18pt; /* Tamaño óptimo de letra para lectura en celulares */
-    background-color: #6a0dad; /* Color morado */
     color: #ffffff; /* Color blanco */
     border: none;
     padding: 1rem;
@@ -52,15 +51,31 @@ header > h1 {
     margin: 1rem 0;
 }
 
+.btn-primary {
+    background-color: #6a0dad; /* Color morado */
+}
+
+.btn-primary:hover, .btn-primary:focus {
+    background-color: #9c4dcc; /* Color morado claro al pasar el cursor sobre el botón */
+}
+
+.btn-yt {
+    background-color: #f50404; /* Color morado */
+}
+
+.btn-yt:hover, .btn-yt:focus {
+    background-color: #ff4949; /* Color morado claro al pasar el cursor sobre el botón */
+}
+
+
+
 .disabled {
     background-color: #ccc;
     color: #888;
     cursor: not-allowed;
 }
 
-.btn:hover, .btn:focus {
-    background-color: #9c4dcc; /* Color morado claro al pasar el cursor sobre el botón */
-}
+
 
 footer {
     background-color: var(--primary);
